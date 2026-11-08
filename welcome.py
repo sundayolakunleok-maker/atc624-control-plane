@@ -1,10 +1,11 @@
 """Personalized welcome message."""
 
 
-def welcome_message(first_name):
+def welcome_message(first_name, greeting="Welcome"):
     """Return a welcome message for ``first_name``.
 
-    Blank, empty, or whitespace-only names fall back to "Guest".
+    Blank, empty, or whitespace-only names always fall back to
+    "Welcome, Guest!", regardless of ``greeting``.
     """
     if first_name is None:
         return "Welcome, Guest!"
@@ -13,4 +14,4 @@ def welcome_message(first_name):
     if not name:
         return "Welcome, Guest!"
 
-    return f"Welcome, {name}!"
+    return f"{greeting}, {name}!"
